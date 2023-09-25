@@ -162,6 +162,8 @@ console.log(sum); // 110
         }
     }
   }
+  ```
+  ```javascript
   解法2:建立陣列並使用foreach遍歷陣列
     const emptyArray = [];
     for (let i = 1; i <= 100; i++) {
@@ -183,7 +185,8 @@ console.log(sum); // 110
     });
 
     console.log(newArray);
-
+  ```
+  ```javascript
   解法3:建立陣列並利用map將結果存為新陣列
     const emptyArray = [];
     for (let i = 1; i <= 100; i++) {
@@ -203,19 +206,16 @@ console.log(sum); // 110
     });
 
     console.log(newArray);
-    ```
+  ```
 
 2. **陣列操作**：
   給定一個數字陣列，例如`[1, 2, 3, 4, 5]`，請寫一個函數返回一個新陣列，其中每個元素都乘以2。
 
   ```javascript
-
   const array=[1,2,3,4,5];//原始的數字陣列
   const double_array=array.map(function(x){return x*2});//返回原始陣列且每個元素值*2
   //const double_array_2 = array.map(x => x * 2);箭頭函式寫法
   console.log(double_array);//印出返回的陣列
-
-
   ```
 
 3. **使用 axios 取得 API 資料**：
