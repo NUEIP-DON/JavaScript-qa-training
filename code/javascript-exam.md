@@ -419,6 +419,7 @@ d. 請給出一個例子展示箭頭函數和傳統函數中 `this` 的差異。
         family: ['揍敵客'],
         hunterfn: function() {
             this.family.map(item => {
+                console.log(this);//{name: '奇犽', family: Array(1), hunterfn: ƒ}
                 console.log(`${this.name}是${item}家族`);
             })
         }
