@@ -382,37 +382,36 @@ console.log(sum); // 110
     console.log(killua.name);   // 揍敵客奇犽
 ```
 
+c. `this` 在箭頭函數和傳統函數中有什麼不同？
+   - 傳統函式：this 會依照呼叫的方法而定，並非宣告的時機
+   - 箭頭函數：this 會綁定到其定義時所在的物件
 
-```javascript
+d. 請給出一個例子展示箭頭函數和傳統函數中 `this` 的差異。
 
-    c.`this` 在箭頭函數和傳統函數中有什麼不同？
-    傳統函式：this 會依照呼叫的方法而定，並非宣告的時機
-    箭頭函式：this 會綁定到其定義時所在的物件
-
-    d.請給出一個例子展示箭頭函數和傳統函數中 `this` 的差異。
-
-    - 物件中的方法呼叫this:this綁定到hunter物件
-    const hunter = {
-        name: '奇犽',
-        family: ['揍敵客'],
-        hunterfn: function() {
-            let killua = this;//需另外宣告一個變數賦與 this 的值
-            this.family.map(function(item){
-            console.log(`${killua.name}是${item}家族`);
-            })
-        }
-    }
-    hunter.hunterfn();//奇犽是揍敵客家族
-    - map內的函式改為箭頭函式
+   - 物件中的方法呼叫 this：this 綁定到 hunter 物件
+   ```javascript
+   const hunter = {
+       name: '奇犽',
+       family: ['揍敵客'],
+       hunterfn: function() {
+           let killua = this; // 需另外宣告一個變數賦與 this 的值
+           this.family.map(function(item) {
+               console.log(`${killua.name}是${item}家族`);
+           })
+       }
+   }
+   hunter.hunterfn(); // 奇犽是揍敵客家族
+   ```
+   ```javascript
+    箭頭函式的 this 值會繼承他的父作用域，跟傳統函式「根據呼叫的方式而定」不同，箭頭函式是在定義時就被指定了，以後也不會隨著呼叫方法改變
     const hunter2 = {
         name: '奇犽',
         family: ['揍敵客'],
         hunterfn: function() {
             this.family.map(item => {
-            console.log(`${this.name}是${item}家族`);
+                console.log(`${this.name}是${item}家族`);
             })
         }
     }
-    hunter2.hunterfn();//奇犽是揍敵客家族
-        - 箭頭函式的 this 值會繼承他的父作用域，跟傳統函式「根據呼叫的方式而定」不同，箭頭函式是在定義時就被指定了，以後也不會隨著呼叫方法改變
-```
+    hunter2.hunterfn(); // 奇犽是揍敵客家族
+   ```
