@@ -344,7 +344,7 @@ console.log(sum); // 110
 
         var hunter_killua = obj1.hunter
         hunter_killua()//奇犽
-
+        --------------------------------------------
         - 2.2 callback
         function hunter() {
         console.log(this.name)
@@ -365,8 +365,16 @@ console.log(sum); // 110
         function callKillua(x){
             x()
         }
-
         callKillua(obj1.hunter);//奇犽
+         /*
+        callKillua(obj1.hunter) 呼叫了 callKillua 函數，並將 obj1.hunter 函數引用作為參數傳遞。
+        在 callKillua 函數內部，傳遞進來的函數 x 即為 obj1.hunter。
+        x() 在這裡相當於 obj1.hunter()，即調用 obj1 物件內的 hunter 函數。
+        由於函數 hunter 內部的 this 關鍵字是在調用時確定的，而在這裡，obj1.hunter 函數是在全局上下文中被調用的，所以 this 指向全局物件。
+        全局物件具有一個全局變數 name，其值為 '奇犽'。
+        因此，this.name 將訪問全局變數 name 的值，即 '奇犽'。
+        所以callKillua(obj1.hunter); 的輸出將是 '奇犽'。
+        */
 ```
        
 
