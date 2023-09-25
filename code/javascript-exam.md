@@ -283,8 +283,10 @@ console.log(sum); // 110
     - this 是 function 執行時，自動生成的一個內部物件。
     - 隨著 function 執行場合的不同，this 所指向的值，也會有所不同。
     - 在大多數的情況下， this 代表的就是呼叫 function 的物件 (Owner Object of the function)。
-
+  ```
+  ```javascript
     b.在哪些情境下，`this` 的值會改變？
+    
     1.直接呼叫的函式，this 會指向全域
     function hunter() {
     var name = 'function奇犽'
@@ -321,9 +323,6 @@ console.log(sum); // 110
         }
     }
     hunter.hunterfn();//傳統函式宣告的位置並不會影響 this 指向的值，重要的是呼叫的方法，如果是純粹的呼叫傳統函式的話，無論放在什麼位置，這個 this 都會指向全域，而 map() 方法裡的函式，是 map() 方法內的回調函數，他是一個獨立函數，不是被當作物件的方法調用，這個時候這個獨立函數裡面的 this 就會指向 window 了。
-
-
-
         - 改變指向該物件的情況
          - 2.1 間接呼叫：把物件中的方法參考到另一個新變數(call  reference)，當呼叫這個新變數時就會退回到「this 指向全域」的模式。
         function hunter() {
@@ -376,7 +375,9 @@ console.log(sum); // 110
         因此，this.name 將訪問全局變數 name 的值，即 '奇犽'。
         所以callKillua(obj1.hunter); 的輸出將是 '奇犽'。
         */
+```
 
+```javascript
     3.this 會綁定在使用 new 關鍵字所建立的實體物件
 
     function hunter(name) {
@@ -417,5 +418,4 @@ console.log(sum); // 110
     }
     hunter2.hunterfn();//奇犽是揍敵客家族
         - 箭頭函式的 this 值會繼承他的父作用域，跟傳統函式「根據呼叫的方式而定」不同，箭頭函式是在定義時就被指定了，以後也不會隨著呼叫方法改變
-        
-  ```
+```
