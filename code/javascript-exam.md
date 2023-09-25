@@ -294,7 +294,8 @@ console.log(sum); // 110
     console.log(this.name)
     }
     var name = '全域奇犽'
-    who()   // output: 全域奇犽
+    hunter()   // output: 全域奇犽
+    -----------------------------------------------------------
     2.哪個物件去呼叫了函式，函式內的 this 就會指向該物件
     function hunter() {
     console.log(this.name)
@@ -323,7 +324,7 @@ console.log(sum); // 110
             })
         }
     }
-    hunter.hunterfn();
+    hunter.hunterfn();//this指向window
     /*傳統函式宣告的位置並不會影響 this 指向的值，重要的是呼叫的方法，如果是純粹的呼叫傳統函式的話，無論放在什麼位置，這個 this 都會指向全域，而 map() 方法裡的函式，是 map() 方法內的回調函數，他是一個獨立函數，不是被當作物件的方法調用，這個時候這個獨立函數裡面的 this 就會指向 window 了。*/
         - 改變指向該物件的情況
          - 2.1 間接呼叫：把物件中的方法參考到另一個新變數(call  reference)，當呼叫這個新變數時就會退回到「this 指向全域」的模式。
@@ -345,7 +346,7 @@ console.log(sum); // 110
 
         var hunter_killua = obj1.hunter
         hunter_killua()//奇犽
-        --------------------------------------------
+        -----------------------------------------------------------
         - 2.2 callback
         function hunter() {
         console.log(this.name)
@@ -374,7 +375,7 @@ console.log(sum); // 110
         由於函數 hunter 內部的 this 關鍵字是在調用時確定的，而在這裡，obj1.hunter 函數是在全局上下文中被調用的，所以 this 指向全局物件。
         全局物件具有一個全局變數 name，其值為 '奇犽'。
         因此，this.name 將訪問全局變數 name 的值，即 '奇犽'。
-        所以callKillua(obj1.hunter); 的輸出將是 '奇犽'。
+        所以callKillua(obj1.hunter); 的輸出會是 '奇犽'。
         */
 ```
        
