@@ -277,15 +277,15 @@ console.log(sum); // 110
   - c.`this` 在箭頭函數和傳統函數中有什麼不同？
   - d.請給出一個例子展示箭頭函數和傳統函數中 `this` 的差異。
 
-  ```javascript
+```javascript
     a.請解釋 JavaScript 中的 `this` 關鍵字。
     - this 是 JavaScript 的一個關鍵字。
     - this 是 function 執行時，自動生成的一個內部物件。
     - 隨著 function 執行場合的不同，this 所指向的值，也會有所不同。
     - 在大多數的情況下， this 代表的就是呼叫 function 的物件 (Owner Object of the function)。
-  ```
+```
 
-  ```javascript
+```javascript
     b.在哪些情境下，`this` 的值會改變？
     
     1.直接呼叫的函式，this 會指向全域
@@ -369,8 +369,8 @@ console.log(sum); // 110
         callKillua(obj1.hunter);//奇犽
 ```
        
-```javascript
 
+```javascript
     3.this 會綁定在使用 new 關鍵字所建立的實體物件
 
     function hunter(name) {
@@ -380,10 +380,11 @@ console.log(sum); // 110
 
     var killua = new hunter('揍敵客奇犽')
     console.log(killua.name);   // 揍敵客奇犽
-
 ```
 
+
 ```javascript
+
     c.`this` 在箭頭函數和傳統函數中有什麼不同？
     傳統函式：this 會依照呼叫的方法而定，並非宣告的時機
     箭頭函式：this 會綁定到其定義時所在的物件
