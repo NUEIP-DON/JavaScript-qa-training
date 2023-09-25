@@ -284,6 +284,7 @@ console.log(sum); // 110
     - 隨著 function 執行場合的不同，this 所指向的值，也會有所不同。
     - 在大多數的情況下， this 代表的就是呼叫 function 的物件 (Owner Object of the function)。
   ```
+
   ```javascript
     b.在哪些情境下，`this` 的值會改變？
     
@@ -366,18 +367,10 @@ console.log(sum); // 110
         }
 
         callKillua(obj1.hunter);//奇犽
-        /*
-        callKillua(obj1.hunter) 呼叫了 callKillua 函數，並將 obj1.hunter 函數引用作為參數傳遞。
-        在 callKillua 函數內部，傳遞進來的函數 x 即為 obj1.hunter。
-        x() 在這裡相當於 obj1.hunter()，即調用 obj1 物件內的 hunter 函數。
-        由於函數 hunter 內部的 this 關鍵字是在調用時確定的，而在這裡，obj1.hunter 函數是在全局上下文中被調用的，所以 this 指向全局物件。
-        全局物件具有一個全局變數 name，其值為 '奇犽'。
-        因此，this.name 將訪問全局變數 name 的值，即 '奇犽'。
-        所以callKillua(obj1.hunter); 的輸出將是 '奇犽'。
-        */
 ```
-
+       
 ```javascript
+
     3.this 會綁定在使用 new 關鍵字所建立的實體物件
 
     function hunter(name) {
@@ -386,8 +379,11 @@ console.log(sum); // 110
     var name = '奇犽'
 
     var killua = new hunter('揍敵客奇犽')
-    console.log(killua.name)   // 揍敵客奇犽
+    console.log(killua.name);   // 揍敵客奇犽
 
+```
+
+```javascript
     c.`this` 在箭頭函數和傳統函數中有什麼不同？
     傳統函式：this 會依照呼叫的方法而定，並非宣告的時機
     箭頭函式：this 會綁定到其定義時所在的物件
